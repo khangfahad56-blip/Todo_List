@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 48px 20px;
+    background: #f2f6fb;
+    color: #172b4d;
+    font-family: Inter, "Segoe UI", sans-serif;
+}
+
+.notes-card {
+    width: min(100%, 620px);
+    margin: 0 auto;
+    padding: 32px;
+    background: #fff;
+    border: 1px solid #e2eaf3;
+    border-radius: 16px;
+    box-shadow: 0 14px 36px rgba(26, 52, 86, 0.09);
+}
+
+.notes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.heading {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.status-badge {
+    flex: 0 0 auto;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: #e6f6e9;
+    color: #287444;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.todo {
+    display: block;
+    margin-bottom: 9px;
+    color: #52647a;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+#task {
+    min-width: 0;
+    flex: 1;
+    padding: 13px 15px;
+    border: 1px solid #cbd7e5;
+    border-radius: 9px;
+    outline: none;
+    background: #fff;
+    color: #172b4d;
+    font: inherit;
+    line-height: 1.4;
+}
+
+#task::placeholder {
+    color: #92a0b2;
+}
+
+#task:focus {
+    border-color: #2878d0;
+    box-shadow: 0 0 0 3px rgba(40, 120, 208, 0.14);
+}
+
+#add_btn {
+    flex: 0 0 auto;
+    padding: 0 22px;
+    border: 0;
+    border-radius: 9px;
+    background: #2675d2;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#add_btn:hover {
+    background: #1d63b7;
+}
+
+#list {
+    display: grid;
+    gap: 12px;
+    margin: 28px 0 22px;
+    padding: 0;
+    list-style: none;
+}
+
+#list li {
+    position: relative;
+    padding: 13px 15px 13px 38px;
+    border: 1px solid #e5edf6;
+    border-radius: 9px;
+    background: #f9fbfe;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#list li::before {
+    position: absolute;
+    top: 20px;
+    left: 16px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2878d0;
+    content: "";
+}
+
+#delete_btn {
+    padding: 9px 13px;
+    border: 1px solid #d7e0eb;
+    border-radius: 8px;
+    background: #fff;
+    color: #52647a;
+    font: inherit;
+    font-size: 0.88rem;
+    cursor: pointer;
+}
+
+#delete_btn:hover {
+    border-color: #b9c8d9;
+    background: #f7f9fc;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 24px 14px;
+    }
+
+    .notes-card {
+        padding: 23px 19px;
+    }
+
+    .heading {
+        font-size: 1.55rem;
+    }
+
+    .status-badge {
+        padding: 6px 9px;
+        font-size: 0.7rem;
+    }
+
+    .input-row {
+        gap: 8px;
+    }
+
+    #add_btn {
+        padding: 0 15px;
+    }
+}

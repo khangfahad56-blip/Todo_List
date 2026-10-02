@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="notes-card">
+        <header class="notes-header">
+            <h1 class="heading">My Notes</h1>
+            <!-- <span class="status-badge">survives refresh</span> -->
+        </header>
+        <form class="note-form" onsubmit="return false">
+            <label for="task" class="todo">Write a note</label>
+            <div class="input-row">
+                <input type="text" id="task" name="todo" placeholder="What do you want to remember?">
+                <button id="add_btn" type="button">Add</button>
+            </div>
+        </form>
+        <ul id="list">
+        </ul>
+        <button id="delete_btn" type="button">Delete all notes</button>
+    </main>
+</body>
+    <script src="app.js"></script>
+</html>
