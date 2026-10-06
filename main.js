@@ -1,43 +1,32 @@
+import {add_task} from "./utils.js"
+import {show_task} from "./components.js"
+import { store_task, delete_tasks,data } from "./data.js";
+
 let task = document.querySelector("#task");
 let add_btn = document.querySelector("#add_btn");
 let delete_btn = document.querySelector("#delete_btn");
 let list = document.querySelector("#list");
 let tasks = [];
 
-const add_task = () => {
-  tasks.push(task.value);
-};
-const show_task = () => {
-  const li = document.createElement("li");
-  li.innerText = task.value;
-  list.append(li);
-};
-const store_task = () => {
-  let json_tasks = JSON.stringify(tasks);
-  localStorage.setItem("user", json_tasks);
-};
-const delete_tasks = () => {
-  localStorage.clear()
-  list.innerHTML = ""
-};
+
 task.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
-    add_task();
-    show_task();
-    store_task();
+    add_task(tasks,task);
+    show_task(task,list);
+    store_task(tasks);
     task.value = "";
   }
 });
 add_btn.addEventListener("click", () => {
-  add_task();
-  show_task();
-  store_task();
+  add_task(tasks,task);
+  show_task(task,list);
+  store_task(tasks);
   task.value = "";
 });
 delete_btn.addEventListener("click", ()=>{
   delete_tasks()
 })
-data = localStorage.getItem("user")
+
 if(data !== null){
   tasks = JSON.parse(localStorage.getItem("user"))
   tasks.forEach(task => {
